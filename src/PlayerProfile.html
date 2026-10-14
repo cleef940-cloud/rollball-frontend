@@ -1,0 +1,37 @@
+import { useParams } from 'react-router-dom'
+import { useState, useEffect } from 'react'
+import { supabase } from './supabaseClient'
+
+function PlayerProfile() {
+    const { id } = useParams()
+    const [player , stePlayer] = useState(null)
+
+    useEffect(() => {
+        async function fetchPlayer() {
+            const { data , error } = await supabase
+              .from('players')
+              .select('*')
+              .eq('id', id)
+              .single()
+
+           stePlayer(data)   
+        }
+    fetchPlayer()
+    }, [id])
+
+    if (!playyer) return <p>Loading...</p>
+
+    return (
+        <div className="player-profile">
+            <h1>{player.name}</h1>
+            <p>#{player.jersey_number} - {player.position}</p>
+            <p>Age: {player.age_year}</p>
+            <p>Height: {player.height} inches</p>
+            <p>Status: {player.status}</p>
+            <p>{player.bio}</p>
+         </div> 
+    )
+
+}
+
+export default PlayerProfile
