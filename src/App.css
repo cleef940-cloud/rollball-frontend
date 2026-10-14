@@ -1080,3 +1080,330 @@ body {
 .about-contact a:hover {
   color: #b7f5d2;
 }
+
+
+/* Shared responsive layout */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100%;
+  min-width: 320px;
+}
+
+body {
+  overflow-x: clip;
+}
+
+#root {
+  width: 100%;
+  max-width: 1126px;
+  min-width: 0;
+  overflow-x: clip;
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+.sidebar {
+  left: 0;
+  width: 280px;
+  max-width: 88vw;
+  height: 100vh;
+  height: 100dvh;
+  box-sizing: border-box;
+  transform: translateX(-105%);
+  transition: transform 0.25s ease;
+}
+
+.sidebar.open {
+  left: 0;
+  transform: translateX(0);
+}
+
+.sidebar-close,
+.hamburger,
+.roster-reset,
+.stats-tab,
+.banner-btn {
+  min-height: 44px;
+}
+
+.sidebar-links a {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.player-profile {
+  width: min(100% - 48px, 900px);
+  margin: 0 auto;
+  padding: 32px 0;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 960px) {
+  .utility-bar {
+    display: none;
+  }
+
+  .main-nav {
+    gap: 12px;
+    padding: 10px 16px;
+  }
+
+  .main-nav-links {
+    display: none;
+  }
+
+  .main-nav-logo {
+    flex: 1;
+    min-width: 0;
+  }
+
+  .logo-img {
+    width: 64px;
+    height: 64px;
+    flex: 0 0 64px;
+  }
+
+  .hamburger {
+    width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
+    display: inline-grid;
+    place-items: center;
+    padding: 0;
+  }
+
+  .sidebar {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 700px) {
+  .hero {
+    height: auto;
+    min-height: 320px;
+    margin: 16px;
+    border-radius: 12px;
+  }
+
+  .hero-overlay {
+    width: 100%;
+    padding: 18px 20px 32px;
+  }
+
+  .hero-overlay h1 {
+    font-size: clamp(1.45rem, 7vw, 2rem);
+    line-height: 1.15;
+    overflow-wrap: anywhere;
+  }
+
+  .hero-overlay p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+
+  .carousel-arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .fixtures-widget {
+    margin: 0 16px 16px;
+    padding: 16px;
+  }
+
+  .fixture-row {
+    gap: 8px;
+    font-size: clamp(0.76rem, 3.4vw, 0.95rem);
+  }
+
+  .fixture-team {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .fixture-score {
+    flex-basis: 56px;
+  }
+
+  .roster-page h1,
+  .table-page h1,
+  .stats-page h1,
+  .clubs-page h1,
+  .news-page h1 {
+    padding: 22px 16px 0;
+    margin-bottom: 16px;
+    font-size: clamp(1.75rem, 7vw, 2.35rem);
+    overflow-wrap: anywhere;
+  }
+
+  .roster-controls {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+
+  .roster-search {
+    grid-column: 1 / -1;
+    width: 100%;
+    min-width: 0;
+  }
+
+  .roster-filter,
+  .roster-reset {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 12px;
+  }
+
+  .roster-table,
+  .standings-table,
+  .stats-table {
+    display: block;
+    width: calc(100% - 32px);
+    max-width: calc(100% - 32px);
+    margin: 0 16px 20px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    white-space: nowrap;
+  }
+
+  .roster-table {
+    min-width: 560px;
+  }
+
+  .standings-table {
+    min-width: 760px;
+  }
+
+  .stats-table {
+    min-width: 480px;
+  }
+
+  .roster-table th,
+  .roster-table td,
+  .standings-table th,
+  .standings-table td,
+  .stats-table th,
+  .stats-table td {
+    padding: 12px;
+  }
+
+  .form-badges {
+    gap: 3px;
+  }
+
+  .form-badge {
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+  }
+
+  .stats-tabs {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    padding: 0 16px;
+    margin-bottom: 16px;
+  }
+
+  .stats-tab {
+    min-width: 0;
+    padding: 8px 10px;
+    line-height: 1.25;
+  }
+
+  .clubs-grid,
+  .news-grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 12px;
+    margin: 0 16px 20px;
+  }
+
+  .club-card,
+  .news-card {
+    padding: 16px;
+  }
+
+  .news-photo {
+    height: clamp(150px, 48vw, 220px);
+  }
+
+  .matches-banner {
+    padding: 24px 16px;
+  }
+
+  .player-profile {
+    width: calc(100% - 32px);
+    padding: 24px 0;
+  }
+
+  .player-profile h1 {
+    font-size: clamp(1.8rem, 8vw, 2.5rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+  }
+
+  .player-profile > div {
+    height: 240px !important;
+  }
+
+  .about-hero {
+    padding: 40px 20px 32px;
+  }
+
+  .about-hero-lead {
+    font-size: 1rem;
+  }
+
+  .about-vision,
+  .about-registration {
+    padding: 20px;
+  }
+
+  .about-commitments {
+    padding: 36px 0;
+  }
+
+  .about-contact {
+    padding-bottom: 20px;
+    overflow-wrap: anywhere;
+  }
+}
+
+@media (max-width: 380px) {
+  .main-nav {
+    padding-inline: 12px;
+  }
+
+  .main-nav-logo {
+    gap: 8px;
+    font-size: 0.95rem;
+  }
+
+  .logo-img {
+    width: 56px;
+    height: 56px;
+    flex-basis: 56px;
+  }
+
+  .roster-controls {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .roster-search {
+    grid-column: auto;
+  }
+}
