@@ -1,18 +1,11 @@
 {
-<<<<<<< HEAD
   "name": "rollball-league-react",
   "private": true,
   "version": "0.0.0",
-=======
-  "name": "rollball-frontend",
-  "version": "0.0.0",
-  "private": true,
->>>>>>> bf82f2febfd0d694bfa1b365e21cbcd92b81f06a
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-<<<<<<< HEAD
     "lint": "eslint .",
     "preview": "vite preview"
   },
@@ -33,14 +26,5 @@
     "eslint-plugin-react-refresh": "^0.5.4",
     "globals": "^17.11.0",
     "vite": "^8.2.2"
-=======
-    "preview": "vite preview"
-  },
-  "devDependencies": {
-    "vite": "^8.2.2"
-  },
-  "dependencies": {
-    "@supabase/supabase-js": "^2.112.4"
->>>>>>> bf82f2febfd0d694bfa1b365e21cbcd92b81f06a
   }
 }
